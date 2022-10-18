@@ -1,0 +1,327 @@
+.Discover {
+
+    .container.fade {
+        animation: zoomOutUp;
+        animation-duration: 1s;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 32px;
+
+        position: absolute;
+        width: 1286px;
+        height: 640px;
+        left: 112px;
+        top: 152px;
+
+        animation: zoomIn;
+        animation-duration: 1s; 
+
+        .container_text {
+            display: flex;
+            flex-direction: column;
+            width: 766px;
+            height: 600px;
+            left: 17px;
+            top: -87px;
+            background: #FFFFFF;
+            border: 1.18798px solid rgba(0, 22, 10, 0.1);
+            box-shadow: -50px 38px 38px rgba(0, 22, 10, 0.1);
+            border-radius: 61.874px;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+                margin: 0;
+                width: 648px;
+                height: 560px;
+                flex: none;
+                order: 0;
+                margin-top: 0px;
+
+                animation: zoomInLeft;
+                animation-duration: 1.5s;
+
+                h1 {
+                    padding: 0;
+                    margin: 0;
+                    font-family: 'SF Pro Text Semibold';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 60px;
+                    line-height: 72px;
+                    letter-spacing: 0.025em;
+                    font-feature-settings: 'liga' off;
+                    color: #111827;
+                    flex: none;
+                    order: 0;
+                    align-self: stretch;
+                    flex-grow: 0;
+                }
+
+                .img_change_view_paragraphe {
+                    margin-left: 618px;
+                    margin-top: -30px;
+                    height: 30px;
+                    border-radius: 5px;
+                    transition: 1s;
+                }
+
+                .img_change_view_paragraphe.top {
+                    margin-top: -430px;
+                    transform: rotate(180deg);
+                }
+
+                .img_change_view_paragraphe:hover {
+                    cursor: pointer;
+                    box-shadow: #3D9090 0px 2px 8px 0px;
+                }
+
+                .paragraph__global {
+                    height: 430px;
+                    max-height: 430px!important;
+                    overflow: hidden;
+                    
+                    .paragraphe.active {
+                        display: block;
+                        margin-top: 0;
+                    }
+
+                    .paragraphe {
+                        display: block;
+                        height: 430px;
+                        max-height: 430px!important;
+                        margin-top: -450px;
+                        transition: 1s;
+                        p {
+                            text-align: left;
+                            font-family: 'SF Pro Rounded';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 28px;
+                            font-feature-settings: 'liga' off;
+                            color: #9E9E9E;
+                            flex: none;
+                            order: 1;
+                            align-self: stretch;
+                            flex-grow: 0;
+
+                            span {
+                                position: relative;
+                                transition: 0.3s;
+
+                                a {
+                                    font-family: 'SF Pro Text Semibold';
+                                    font-style: normal;
+                                    font-size: 18px;  
+                                    font-feature-settings: 'liga' off;
+                                    color: #327575;
+                                    text-decoration: underline;
+                                    transition: 0.3s;
+                                }
+
+                                &:hover {
+                                    cursor: pointer;
+                                    font-weight: 800;
+                                    background-color: #3D9090;
+                                    border-radius: 5px;
+
+                                    a {
+                                        color: #ffffff;
+                                        padding: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    .paragraphe2.active {
+                        display: block;
+                        margin-top: 0;
+                    }
+    
+                    .paragraphe2 {
+                        display: block;
+                        opacity: 0;
+                        visibility: hidden;
+                        height: 430px;
+                        max-height: 430px!important;
+                        margin-top: 430px;
+                        transition: 1s;
+    
+                        p {
+                            text-align: left;
+                            font-family: 'SF Pro Rounded';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 28px;
+                            font-feature-settings: 'liga' off;
+                            color: #9E9E9E;
+                            flex: none;
+                            order: 1;
+                            align-self: stretch;
+                            flex-grow: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .container_img {
+        width: 488px;
+        height: 640px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        order: 1;
+        flex-grow: 0;
+        justify-content: center;
+        align-items: center;
+
+        animation: fadeInUp;
+        animation-duration: 0.5s; 
+        
+
+        .screen {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            height: 600px;
+            left: 17px;
+            top: -87px;
+            background: #FFFFFF;
+            border: 1.18798px solid rgba(0, 22, 10, 0.1);
+            box-shadow: -50px 38px 38px rgba(0, 22, 10, 0.1);
+            border-radius: 61.874px;
+            align-items: center;
+            text-align: center;
+
+            img {
+                width: 400px;
+                height: 400px;
+                margin-top: -30px;
+                animation: zoomInRight;
+                animation-duration: 1.5s;
+            }
+
+            p {
+                max-width: 300px!important;
+                font-family: 'SF Pro Rounded';
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 25px;
+                letter-spacing: 0.01px;
+                color: #9E9E9E;
+                // margin-top: -7%;
+                animation: zoomInRight;
+                animation-duration: 1.5s;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                animation: zoomInRight;
+                animation-duration: 1.5s;
+            }
+
+            .button {
+                display: flex;
+                border: none;
+                height: 50px;
+                width: 220px;
+                background: #060016;
+                border-radius: 8px;
+                transition: .2s ease;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                overflow: hidden;
+                cursor: pointer;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin-top: 0;
+                    transition: .4s ease;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                a {
+                    position: absolute;
+                    font-family: 'SF Pro Rounded';
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 22.2246px;
+                    line-height: 33px;
+                    color: #FFFFFF;
+                    transition: .2s ease;
+                }
+                &:hover {
+                    background: #3D9090;
+                }
+                &:hover a {
+                    transform: translateX(-20px);
+                }
+                &:hover img {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(65px);
+                }
+            }
+            .button2 {
+                display: flex;
+                border: none;
+                height: 50px;
+                width: 220px;
+                border-radius: 8px;
+                transition: .2s ease;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                overflow: hidden;
+                cursor: pointer;
+                background: transparent;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin-top: 0;
+                    transition: .4s ease;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                a {
+                    position: absolute;
+                    font-family: 'SF Pro Rounded';
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 22.2246px;
+                    line-height: 33px;
+                    color: #000000;
+                    transition: .2s ease;
+                }
+                &:hover a {
+                    transform: translateX(-20px);
+                }
+                &:hover img {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(65px);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,294 @@
+.Header {
+
+    .header {
+        display: flex;
+        height: 60px;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+
+        li.fade {
+            animation: flipOutX;
+            animation-duration: 1s;
+        }
+
+        li {
+            list-style-type: none;
+            position: relative;
+            animation: flipInX;
+            animation-duration: 1s;
+            a {
+                text-decoration: none;
+                font-family: 'SF Pro Text Semibold';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 50px;
+                line-height: 133.84%;
+                letter-spacing: 0.055em;
+                // text-transform: uppercase;
+                color: #3D9090;
+                transition: all 0.3s ease;
+                padding-left: 3px;
+                padding-right: 3px;
+
+                span {
+                    font-family: 'SF Pro Rounded';
+                    font-size: 15px;
+                }
+            }
+        }
+
+        li::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 92% 0 0 0;
+            background: #3D9090;
+            border-radius: 2px;
+            transition: .3s;
+        }
+
+        li:hover a {
+            color: #ffffff;
+        }
+
+        li:hover::after {
+            inset: 0 0 0 0;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            gap: 54px;
+
+            li.fade {
+                animation: zoomOutRight;
+                animation-duration: 1s;
+            }
+
+            li {
+                position: relative;
+                animation: zoomInRight;
+                animation-duration: 1s;
+                cursor: pointer;
+
+                a {
+                    text-decoration: none;
+                    font-family: 'SF Compact Display';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 21px;
+                    line-height: 133.84%;
+                    letter-spacing: 0.055em;
+                    text-transform: uppercase;
+                    color: #3D9090;
+                    transition: all 0.3s ease;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                }
+                img {
+                    display: flex;
+                    margin-top: -23px;
+                    margin-left: 145px;
+                    padding-right: 3px;
+                    transition: 0.3s;
+                    rotate: 90deg;
+                }
+            }
+
+            li::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 92% 0 0 0;
+                background: #3D9090;
+                border-radius: 2px;
+                transition: .3s;
+            }
+
+            li:hover a {
+                color: #ffffff;
+            }
+
+            li:hover img {
+                filter: brightness(0) invert(1);
+            }
+
+            li:hover::after {
+                inset: 0 0 0 0;
+            }
+        }
+    }
+
+
+    .dropDownAccount {
+        display: none;
+        justify-content: right;
+        align-items: center;
+        overflow: hidden;
+
+        .dropDownAccount__body.small {
+            margin-top: -240px;
+        }
+
+        .dropDownAccount__body {
+            z-index: 1;
+            width: 180px;
+            background: #FFFFFF;
+            border: 1.18798px solid rgba(0, 22, 10, 0.1);
+            // box-shadow: -50px 38px 38px rgba(0, 22, 10, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 1s;
+
+            .dropDownAccount__body__header {
+                display: flex;
+                text-align: left;
+                padding: 8px 16px;
+                border-bottom: 1px solid rgba(0, 22, 10, 0.1);
+                justify-content: center;
+                align-items: center;
+                line-height: 1.5;
+
+                a {
+                    font-family: 'SF Pro Rounded';
+                    font-style: normal;
+                    font-size: 14px;
+                    color: #000000;
+
+                    span {
+                        font-family: 'SF Pro Text Semibold';
+                        color: #3D9090;
+                    }
+                }
+            }
+
+            .dropDownAccount__body__content {
+                display: flex;
+                flex-direction: column;
+                border-bottom: 1px solid rgba(0, 22, 10, 0.1);
+                width: 100%;
+
+                span {
+                    padding-top: 4px;
+                    position: relative;
+                    text-align: left;
+                    height: 35px;
+                    cursor: pointer;
+                    transition: .2s;
+                    // border-bottom: 1px groove rgba(0, 22, 10, 0.1);
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+
+                    img:nth-child(1) {
+                        position: absolute;
+                        margin-left: 10px;
+                        margin-top: 7px;
+                        transition: .3s;
+                    }
+
+                    img:last-child {
+                        position: absolute;
+                        margin-left: 10px;
+                        margin-top: 7px;
+                        transition: .6s;
+                        transform: rotate(100deg);
+                        opacity: 0;
+                    }
+
+                    a {
+                        position: absolute;
+                        margin-left: 40px;
+                        margin-top: 8.5px;
+                        font-family: 'SF Pro Rounded';
+                        font-style: normal;
+                        font-size: 16px;
+                        color: #000000; 
+                        transition: .3s;
+                    }
+                }
+
+                span:last-child {
+                    border: none;
+                    padding-bottom: 4px;
+                }
+
+                span:hover a {
+                    color: #3D9090;
+                }
+
+                span:hover img:last-child {
+                    opacity: 1;
+                    margin-left: 150px;
+                    transform: rotate(360deg);
+                }
+
+                span:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            .dropDownAccount__body__footer {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                span {
+                    padding-top: 4px;
+                    position: relative;
+                    text-align: left;
+                    height: 35px;
+                    cursor: pointer;
+                    transition: .2s;
+                    // border-bottom: 1px groove rgba(0, 22, 10, 0.1);
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    padding-bottom: 4px;
+
+                    img:nth-child(1) {
+                        position: absolute;
+                        margin-left: 10px;
+                        margin-top: 7px;
+                        transition: .3s;
+                    }
+
+                    img:last-child {
+                        position: absolute;
+                        margin-left: 10px;
+                        margin-top: 7px;
+                        transition: .6s;
+                        transform: rotate(100deg);
+                        opacity: 0;
+                    }
+
+                    a {
+                        position: absolute;
+                        margin-left: 40px;
+                        margin-top: 8.5px;
+                        font-family: 'SF Pro Rounded';
+                        font-style: normal;
+                        font-size: 16px;
+                        color: #000000; 
+                        transition: .3s;
+                    }
+                }
+
+                span:hover a {
+                    color: #3D9090;
+                }
+
+                span:hover img:last-child {
+                    opacity: 1;
+                    margin-left: 150px;
+                    transform: rotate(360deg);
+                }
+
+                span:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
