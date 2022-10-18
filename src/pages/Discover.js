@@ -1,5 +1,4 @@
 import '../assets/styles/Discover.scss';
-import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import DelayLink from '../DelayLink';
 
 function Discover() {

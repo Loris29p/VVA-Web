@@ -1,18 +1,17 @@
 import './App.scss';
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
-import Header from './Header';
-import Home from './components/Home';
-import LogIn from './components/LogIn';
-import SignUp from './components/SignUp';
-import Destinations from './components/Destinations';
-import Discover from './components/Discover';
+import Header from './components/Header';
+import Home from './pages/Home';
+import LogIn from './pages/LogIn';
+import SignUp from './pages/SignUp';
+import Destinations from './pages/Destinations';
+import Discover from './pages/Discover';
+import AccountSettings from './pages/AccountSettings';
 
 function App() {
-
     function animationIntro() {
         const intro = document.getElementById('intro');
-        const logo = document.getElementById('logo-header');
         const logoSpan = document.querySelectorAll('.logo');
 
         const top_container = document.getElementById('top_container');
@@ -20,7 +19,9 @@ function App() {
         const container = document.getElementById('container');
 
         setTimeout(() => {
-            top_container.classList.add('slide');
+            if (top_container != null) {
+                top_container.classList.add('slide');
+            }
             bottom_container.classList.add('slide');
             container.classList.add('blur');
 
@@ -41,7 +42,9 @@ function App() {
                 }, 2000);
     
                 setTimeout(() => {
-                    top_container.classList.remove('slide');
+                    if (top_container != null) {
+                        top_container.classList.remove('slide');
+                    }
                     top_container.classList.add('fade');
                     bottom_container.classList.remove('slide');
                     bottom_container.classList.add('fade');
@@ -90,6 +93,7 @@ function App() {
                     <Route path="/signup" element={ <SignUp/> } />
                     <Route path="/destinations" element={ <Destinations/> } />
                     <Route path="/discover" element={ <Discover/> } />
+                    <Route path="/account-settings" element={ <AccountSettings/> } />
                 </Routes>
             </div>
         </div>

@@ -1,10 +1,8 @@
 import '../assets/styles/LogIn.scss';
-import { Routes, Route, Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import DelayLink from '../DelayLink';
-
 import { ToastContainer, toast } from 'react-toastify';
 import '../assets/styles/toastify.css';
-
 
 function LogIn() {
     const navigate = useNavigate()
@@ -38,56 +36,24 @@ function LogIn() {
     }
 
     function sumbitForm() {
-        fetch('http://localhost:8888/api/receive_react.php', {
-                method: 'POST',
-                body: JSON.stringify({
-                    secretWord: "43Hjsdq0",
-                    type: "SELECT",
-                    request: "SELECT * FROM users WHERE email='" + document.getElementById("email").value + "'"
-                })
-            }).then(function(response) {
-                if (response.status >= 200 && response.status < 300) {
-                    return response.text()
-                }
-                throw new Error(response.statusText)
-            })
-            .then(function(response) {
-                const responseJson = JSON.parse(response);
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-                if (responseJson.error === true) {
-                    toast.error("Impossible de trouver votre compte.", {
-                        autoClose: 5000,
-                        closeOnClick: true,
-                        progress: undefined,
-                        icon: true,
-                    });
-                } else {
-                    if (responseJson.data != null && responseJson.data != "") {
-                        if (responseJson.data[0].password === document.getElementById("password").value) {
-                            localStorage.setItem("user", JSON.stringify(responseJson.data[0]));
-                            localStorage.setItem("isLogged", "true");
-                            fadeScreen();
-                            setTimeout(() => {
-                                navigate("/");
-                            }, 1000);
-                        } else {
-                            toast.error("Mot de passe incorrect. Réessayez ou cliquez sur 'Mot de passe oublié' pour le réinitialiser.", {
-                                autoClose: 5000,
-                                closeOnClick: true,
-                                progress: undefined,
-                                icon: true,
-                            });
-                        }
-                    } else {
-                        toast.error("Impossible de trouver votre compte.", {
-                            autoClose: 5000,
-                            closeOnClick: true,
-                            progress: undefined,
-                            icon: true,
-                        });
-                    }
+        if (email === "" || password === "") {
+            toast.error("Veuillez remplir tous les champs.");
+        } else {
+            const login = window.classUser.login(email, password);
+            setTimeout(() => {
+                if (login.connected === true) {
+                    fadeScreen();
+                    setTimeout(() => {
+                        navigate("/");
+                    }, 1000);
+                } else if (login.error === true) {
+                    toast.error(login.message);
                 }
-            })
+            }, 100);
+        }
     }
 
     return ( 
@@ -108,11 +74,11 @@ function LogIn() {
                             <div className = 'form__group__input'>
                                 <div>
                                     <label htmlFor = 'email' > Email </label> 
-                                    <input type = 'text' name = 'email' id = 'email' />
+                                    <input type = 'email' name = 'email' id = 'email' required />
                                 </div>
                                 <div>
                                     <label htmlFor = 'password' > Mot de passe </label> 
-                                    <input type = 'password' name = 'password' id = 'password' />
+                                    <input type = 'password' name = 'password' id = 'password' required />
                                     <a id = 'show_password' onClick = { changeTypePasswordInput } >
                                         <img className = 'img_show_password' id = 'img_show_password' src = '/eye.svg' alt = 'Show password' />
                                     </a> 
@@ -121,8 +87,8 @@ function LogIn() {
                             <div className = 'form__group__button' >
                                 <button type = 'button' onClick = { sumbitForm } >
                                     <a> Se connecter </a>
-                                    <img className = 'first_img' src = '/person.badge.plus.svg' />
-                                    <img className = 'second_img' src = '/arrow.right.circle.svg' />
+                                    <img className = 'first_img' src = '/person.badge.plus.svg' alt='person' />
+                                    <img className = 'second_img' src = '/arrow.right.circle.svg' alt='arrow right' />
                                 </button> 
                             </div> 
                         </div> 

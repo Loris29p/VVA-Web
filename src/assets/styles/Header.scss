@@ -96,6 +96,11 @@
                 }
             }
 
+            li.active img {
+                rotate: 270deg;
+                margin-top: -25px;
+            }
+
             li::after {
                 content: '';
                 position: absolute;

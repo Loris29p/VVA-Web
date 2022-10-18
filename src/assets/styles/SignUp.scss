@@ -134,14 +134,14 @@
                 height: 380px;
                 width: 460px;
                 padding: 20px;
-                padding-top: 40px;
+                padding-top: 20px;
 
-                .form__group__input div:first-child {
+                .form__group__input div:nth-child(2) {
                     animation: zoomInLeft;
                     animation-duration: 1s;
                 }
 
-                .form__group__input div:last-child {
+                .form__group__input div:nth-child(3) {
                     animation: zoomInRight;
                     animation-duration: 1s;
                 }
@@ -149,7 +149,33 @@
                 .form__group__input {
                     display: flex;
                     flex-direction: column;
-                    gap: 30px;
+                    gap: 20px;
+
+                    .form__group__input__names {
+                        display: flex;
+                        flex-direction:row;
+                        gap: 15px;
+                        
+                        .left {
+                            align-self: left;
+                            justify-self: left;
+                            max-width: 220px;
+                            animation: zoomInLeft;
+                            animation-duration: 1s;
+                        }
+
+                        .right {
+                            align-self: right;
+                            justify-self: right;
+                            max-width: 220px;
+                            animation: zoomInRight;
+                            animation-duration: 1s;
+                        }
+
+                        input {
+                            width: 205px;
+                        }
+                    }
 
                     a {
                         position: absolute;
@@ -225,6 +251,8 @@
                     margin-top: 30px;
                     width: 100%;
                     height: 60px;
+                    animation: backInUp;
+                    animation-duration: 1s;
 
                     .checkbox {
                         position: absolute;
@@ -367,7 +395,7 @@
                 }
 
                 .form__group__button {
-                    margin-top: 30px;
+                    margin-top: 10px;
                     width: 100%;
                     height: 50px;
     

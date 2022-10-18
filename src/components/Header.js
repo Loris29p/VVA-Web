@@ -1,8 +1,9 @@
-import './Header.scss';
-import { Routes, Route, Link } from "react-router-dom"
-import DelayLink from './DelayLink';
+import '../assets/styles/Header.scss';
+import { Routes, Route, Link, useNavigate } from "react-router-dom"
+import DelayLink from '../DelayLink';
 
 function Header() {
+    let navigate = useNavigate();
     var canDropDownClicked = true;
     
     function fadeElement(id) {
@@ -45,11 +46,14 @@ function Header() {
 
     function showDropDownAccount() {
         const dropDownAccount = document.getElementById("dropDownAccount");
+        const account = document.getElementById("account_li");
+
         if (canDropDownClicked === true) {
             if (dropDownAccount.style.display === "flex") {
                 canDropDownClicked = false;
                 const dropDownAccount__body = document.getElementById("dropDownAccount__body");
                 dropDownAccount__body.classList.add("small");
+                account.classList.remove("active");
                 setTimeout(() => {
                     dropDownAccount__body.classList.remove("small");
                     dropDownAccount.style.display = "none";
@@ -57,6 +61,7 @@ function Header() {
                 }, 1000);
             } else {
                 canDropDownClicked = false;
+                account.classList.add("active");
                 dropDownAccount.style.display = "flex";
                 const dropDownAccount__body = document.getElementById("dropDownAccount__body");
                 dropDownAccount__body.classList.add("small");
@@ -71,6 +76,9 @@ function Header() {
     function logout() {
         const account = document.getElementById("account_li");
         const dropDownAccount = document.getElementById("dropDownAccount");
+
+        account.classList.remove("active");
+        
         if (dropDownAccount != null) {
             const dropDownAccount__body = document.getElementById("dropDownAccount__body");
             dropDownAccount__body.classList.add("small");
@@ -95,8 +103,7 @@ function Header() {
                     account.style.display = "none";
 
                     setTimeout(() => {
-                        localStorage.setItem("isLogged", "false");
-                        localStorage.setItem("user", JSON.stringify({}));
+                        window.classUser.logout();
                         checkUser();
                     });
                 }, 1000);
@@ -108,20 +115,42 @@ function Header() {
         const dropDownAccount__body = document.getElementById("dropDownAccount__body");
         const account_li = document.getElementById("account_li");
         if (!dropDownAccount__body.contains(event.target) && !account_li.contains(event.target)) {
-            const dropDownAccount = document.getElementById("dropDownAccount");
-            if (dropDownAccount != null) {
-                if (dropDownAccount.style.display === "flex") {
-                    canDropDownClicked = false;
-                    const dropDownAccount__body = document.getElementById("dropDownAccount__body");
-                    dropDownAccount__body.classList.add("small");
-                    setTimeout(() => {
-                        dropDownAccount__body.classList.remove("small");
-                        dropDownAccount.style.display = "none";
-                        canDropDownClicked = true;
-                    }, 1000);
-                }
+            HideDropDownAccount()
+        }
+    }
+
+    function HideDropDownAccount() {
+        const dropDownAccount = document.getElementById("dropDownAccount");
+        const account = document.getElementById("account_li");
+        if (dropDownAccount != null) {
+            if (dropDownAccount.style.display === "flex") {
+                canDropDownClicked = false;
+                const dropDownAccount__body = document.getElementById("dropDownAccount__body");
+                dropDownAccount__body.classList.add("small");
+                account.classList.remove("active");
+                setTimeout(() => {
+                    dropDownAccount__body.classList.remove("small");
+                    dropDownAccount.style.display = "none";
+                    canDropDownClicked = true;
+                }, 1000);
             }
         }
+    }
+
+    function goToFavorites() {
+        navigate("/favorites");
+    }
+
+    function goToAccountSettings() {
+        HideDropDownAccount()
+        setTimeout(() => {
+            fadeElement("account_li");
+            navigate("/account-settings");
+        }, 1000);
+    }
+
+    function goToAdmin() {
+        navigate("/admin");
     }
 
     return (
@@ -133,7 +162,7 @@ function Header() {
                     <DelayLink delay={500} to="/destination" style={{ textDecoration: 'none' }}><li id='destination' onClick={event => fadeElement('destination')}><a>Destination</a></li></DelayLink>
                     <li className='account_li' id='account_li' style={{display: 'none'}} onClick={showDropDownAccount}>
                         <a>Mon compte</a>
-                        <img src='/arrow.right.circle.black.svg' alt='arrow-down' />
+                        <img className='img_account_li' id='img_account_li' src='/arrow.right.circle.black.svg' alt='arrow-down' />
                     </li>
                 </ul>
             </div>
@@ -143,17 +172,17 @@ function Header() {
                         <a>Connecté avec: <br/> <span id='signed_as_in_span'></span></a>
                     </div>
                     <div className='dropDownAccount__body__content'>
-                        <span>
+                        <span onClick={goToFavorites}>
                             <img src='/star.svg' alt='star' />
                             <a>Vos favoris</a>
                             <img src='/arrow.right.circle.black.svg' />
                         </span>
-                        <span>
+                        <span onClick={goToAccountSettings}>
                             <img src='/gear.svg' alt='star' />
                             <a>Paramètres</a>
                             <img src='/arrow.right.circle.black.svg' />
                         </span>
-                        <span id='admin_span' style={{display: 'none'}}>
+                        <span id='admin_span' style={{display: 'none'}} onClick={goToAdmin}>
                             <img src='/xmark.seal.svg' alt='star' />
                             <a>Admin</a>
                             <img src='/arrow.right.circle.black.svg' />

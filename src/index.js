@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import User from './class/User.class';
+import Encryption from './class/Encryption.class';
+import Database from './class/Database.class';
+
+window.classUser = new User();
+window.classEncryption = new Encryption();
+window.classDatabase = new Database();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

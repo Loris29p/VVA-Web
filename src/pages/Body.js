@@ -1,6 +1,5 @@
-import './Body.scss';
-import { Routes, Route, Link } from "react-router-dom"
-import DelayLink from './DelayLink';
+import '../assets/styles/Body.scss';
+import DelayLink from '../DelayLink';
 
 function Body() {
 
@@ -12,14 +11,22 @@ function Body() {
     function checkConnected() {
         if (localStorage.getItem("isLogged") === "true") {
             const button_login = document.getElementById("button_login");
-            button_login.style.display = "none";
+            if (button_login != null) {
+                button_login.style.display = "none";
+            }
             const button_activities = document.getElementById("button_activities");
-            button_activities.style.display = "flex";
+            if (button_activities != null) {
+                button_activities.style.display = "flex";
+            }
         } else {
             const button_login = document.getElementById("button_login");
-            button_login.style.display = "flex";
+            if (button_login != null) {
+                button_login.style.display = "flex";
+            }
             const button_activities = document.getElementById("button_activities");
-            button_activities.style.display = "none";
+            if (button_activities != null) {
+                button_activities.style.display = "none";
+            }
         }
     }
 
