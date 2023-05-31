@@ -103,7 +103,7 @@ function Header() {
                     account.style.display = "none";
 
                     setTimeout(() => {
-                        window.classUser.logout();
+                        window.classUsers.logout();
                         checkUser();
                     });
                 }, 1000);
@@ -145,7 +145,9 @@ function Header() {
         HideDropDownAccount()
         setTimeout(() => {
             fadeElement("account_li");
-            navigate("/account-settings");
+            setTimeout(() => {
+                navigate("/account-settings");
+            }, 1000);
         }, 1000);
     }
 
@@ -159,7 +161,7 @@ function Header() {
                 <DelayLink delay={500} to="/" style={{ textDecoration: 'none' }}><li id='logo' onClick={event => fadeElement('logo')}><a>V<span>illage</span>V<span>acances</span>A<span>lpes</span></a></li></DelayLink>
                 <ul>
                     <DelayLink delay={500} to="/discover" style={{ textDecoration: 'none' }}><li id='discover' onClick={event => fadeElement('discover')}><a>Découvrir VVA</a></li></DelayLink>
-                    <DelayLink delay={500} to="/destination" style={{ textDecoration: 'none' }}><li id='destination' onClick={event => fadeElement('destination')}><a>Destination</a></li></DelayLink>
+                    {/* <DelayLink delay={500} to="/destination" style={{ textDecoration: 'none' }}><li id='destination' onClick={event => fadeElement('destination')}><a>Destination</a></li></DelayLink> */}
                     <li className='account_li' id='account_li' style={{display: 'none'}} onClick={showDropDownAccount}>
                         <a>Mon compte</a>
                         <img className='img_account_li' id='img_account_li' src='/arrow.right.circle.black.svg' alt='arrow-down' />

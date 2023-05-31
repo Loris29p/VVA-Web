@@ -26,7 +26,7 @@
                 line-height: 133.84%;
                 letter-spacing: 0.055em;
                 // text-transform: uppercase;
-                color: #3D9090;
+                color: var(--color-blizzard-primary);
                 transition: all 0.3s ease;
                 padding-left: 3px;
                 padding-right: 3px;
@@ -43,7 +43,7 @@
             position: absolute;
             z-index: -1;
             inset: 92% 0 0 0;
-            background: #3D9090;
+            background: var(--color-blizzard-dark);
             border-radius: 2px;
             transition: .3s;
         }
@@ -81,7 +81,7 @@
                     line-height: 133.84%;
                     letter-spacing: 0.055em;
                     text-transform: uppercase;
-                    color: #3D9090;
+                    color: var(--color-blizzard-primary);
                     transition: all 0.3s ease;
                     padding-left: 3px;
                     padding-right: 3px;
@@ -106,7 +106,7 @@
                 position: absolute;
                 z-index: -1;
                 inset: 92% 0 0 0;
-                background: #3D9090;
+                background: var(--color-blizzard-dark);
                 border-radius: 2px;
                 transition: .3s;
             }
@@ -163,7 +163,7 @@
 
                     span {
                         font-family: 'SF Pro Text Semibold';
-                        color: #3D9090;
+                        color: var(--color-blizzard-primary);
                     }
                 }
             }
@@ -220,7 +220,7 @@
                 }
 
                 span:hover a {
-                    color: #3D9090;
+                    color: var(--color-blizzard-dark);
                 }
 
                 span:hover img:last-child {
@@ -281,7 +281,7 @@
                 }
 
                 span:hover a {
-                    color: #3D9090;
+                    color: var(--color-blizzard-dark);
                 }
 
                 span:hover img:last-child {

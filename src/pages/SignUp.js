@@ -35,20 +35,10 @@ function SignUp() {
             toast.error("Veuillez remplir tous les champs.");
         } else {
             if (condition_utilisation === true) {
-                const register = window.classUser.register(firstname, lastname, email, password);
+                const register = window.classUsers.register(email, password, firstname, lastname);
                 setTimeout(() => {
                     if (register.registered === true) {
-                        const login = window.classUser.login(email, password);
-                        setTimeout(() => {
-                            if (login.connected === true) {
-                                fadeScreen();
-                                setTimeout(() => {
-                                    navigate("/");
-                                }, 1000);
-                            } else if (login.error === true) {
-                                toast.error(login.message);
-                            }
-                        }, 100);
+                        navigate("/login");
                     } else if (register.error === true) {
                         toast.error(register.message);
                     }

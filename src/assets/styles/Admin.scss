@@ -1,0 +1,31 @@
+:root {
+    --checkbox-size: 20px;
+    --checkbox-color: #26323837;
+    --hover-color: #3D9090;
+    --tick-color: #3D9090;
+}
+
+.Admin {
+    .Admin__body.fade {
+        animation: zoomOutUp;
+        animation-duration: 1s;
+    }
+
+    .Admin__body {
+        display: grid;
+        grid-column: 4;
+        padding: 0px;
+        gap: 32px;
+
+        position: absolute;
+        width: 1286px;
+        height: 640px;
+        left: 112px;
+        top: 132px;
+
+        justify-content: center;
+
+        animation: zoomIn;
+        animation-duration: 1s; 
+    }
+}

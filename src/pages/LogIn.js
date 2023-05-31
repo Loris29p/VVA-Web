@@ -22,7 +22,7 @@ function LogIn() {
     }
 
     setTimeout(() => {
-        if (localStorage.getItem("isLogged") === "true") {
+        if (window.classUsers.isLogged()) {
             fadeScreen();
             setTimeout(() => {
                 navigate("/");
@@ -42,9 +42,9 @@ function LogIn() {
         if (email === "" || password === "") {
             toast.error("Veuillez remplir tous les champs.");
         } else {
-            const login = window.classUser.login(email, password);
+            const login = window.classUsers.login(email, password);
             setTimeout(() => {
-                if (login.connected === true) {
+                if (login.logged === true) {
                     fadeScreen();
                     setTimeout(() => {
                         navigate("/");

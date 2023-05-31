@@ -1,6 +1,6 @@
 class Database {
     constructor() {
-        this.link_api = "http://localhost:8888/api/receive_react.php";
+        this.link_api = "http://lorispoilly.online/receive_react.php"; // http://lorispoilly-online.preview-domain.com/receive_react.php
         this.secret = "8tn6kme24lfbea5ojzoci4";
     }
     

@@ -8,6 +8,9 @@ import SignUp from './pages/SignUp';
 import Destinations from './pages/Destinations';
 import Discover from './pages/Discover';
 import AccountSettings from './pages/AccountSettings';
+import Admin from './pages/Admin';
+import Acivity from './pages/Activity';
+import Favorites from './pages/Favorites';
 
 function App() {
     function animationIntro() {
@@ -61,7 +64,7 @@ function App() {
     }
 
     return (
-        <div className="App" onLoad={animationIntro}>
+        <div className="App flex justify-center" onLoad={animationIntro}>
             <div className='intro' id='intro'>
                 <div className='top_container' id='top_container'>
                 </div>
@@ -85,7 +88,7 @@ function App() {
                 </div>
             </div>
 
-            <div className='container' id='container'>
+            <div className='w-full p-10' id='container'>
                 <Header />
                 <Routes>
                     <Route path="/" element={ <Home/> } />
@@ -94,6 +97,9 @@ function App() {
                     <Route path="/destinations" element={ <Destinations/> } />
                     <Route path="/discover" element={ <Discover/> } />
                     <Route path="/account-settings" element={ <AccountSettings/> } />
+                    <Route path="/admin" element={ <Admin/> } />
+                    <Route path="/activity" element={ <Acivity/> } />
+                    <Route path="/favorites" element={ <Favorites/> } />
                 </Routes>
             </div>
         </div>

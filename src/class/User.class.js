@@ -1,82 +1,84 @@
 class User {
-    constructor() {}
-
-    login(email, password) {
-        let infos = {
-            connected: false,
-            error: false,
-            message: ""
-        }
-
-        const responseData = window.classDatabase.select("SELECT * FROM users WHERE email='" + email + "'");
-        responseData.then(function(response) {
-            response = response;
-            if (response !== undefined) {
-                if (response.data.length > 0) {
-                    if (window.classEncryption.decrypt(response.data[0].password) === password) {
-                        localStorage.setItem("user", JSON.stringify(response.data[0]));
-                        localStorage.setItem("isLogged", "true");
-                        infos.connected = true;
-                    } else {
-                        infos.error = true;
-                        infos.message = "Mot de passe incorrect. Réessayez ou cliquez sur 'Mot de passe oublié' pour le réinitialiser.";
-                    }
-                } else {
-                    infos.error = true;
-                    infos.message = "Aucun compte n'est associé à cette adresse email.";
-                }
-            } else {
-                infos.error = true;
-                infos.message = "Une erreur est survenue.";
-            }
-        });
-
-        return infos;
+    constructor(id, email, password, firstname, lastname, id_role, id_site) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.id_role = id_role;
+        this.id_site = id_site;
     }
 
-    logout() {
-        localStorage.setItem("isLogged", "false");
-        localStorage.setItem("user", JSON.stringify({}));
+    getId() {
+        return this.id;
     }
 
-    register(firstname, lastname, email, password) {
-        let infos = {
-            registered: false,
-            error: false,
-            message: ""
-        }
+    getEmail() {
+        return this.email;
+    }
 
-        const responseData = window.classDatabase.select("SELECT * FROM users WHERE email='" + email + "'");
-        responseData.then(function(response) {
-            response = response;
-            if (response !== undefined) {
-                if (response.data.length > 0) {
-                    infos.error = true;
-                    infos.message = "Un compte est déjà associé à cette adresse email.";
-                } else {
-                    const responseData = window.classDatabase.insert("INSERT INTO users (email, password, firstname, lastname) VALUES ('" + email + "', '" + window.classEncryption.encrypt(password) + "', '" + firstname + "', '" + lastname + "')");
-                    responseData.then(function(response) {
-                        response = response;
-                        if (response !== undefined) {
-                            if (response.error === false) {
-                                infos.registered = true;
-                            } else {
-                                infos.error = true;
-                                infos.message = "Une erreur est survenue.";
-                            }
-                        } else {
-                            infos.error = true;
-                            infos.message = "Une erreur est survenue.";
-                        }
-                    });
-                }
-            } else {
-                infos.error = true;
-                infos.message = "Une erreur est survenue.";
-            }
-        });
+    getPassword() {
+        return this.password;
+    }
 
-        return infos;
+    getFirstname() {
+        return this.firstname;
+    }
+
+    getLastname() {
+        return this.lastname;
+    }
+
+    getIdRole() {
+        return this.id_role;
+    }
+
+    getIdSite() {
+        return this.id_site;
+    }
+
+    getSite() {
+        return window.classSites.getSite(this.id_site);
+    }
+
+    setIdSite(id_site) {
+        this.id_site = id_site;
+    }
+
+    setIdRole(id_role) {
+        this.id_role = id_role;
+    }
+
+    setId(id) {
+        this.id = id;
+    }
+
+    setEmail(email) {
+        this.email = email;
+    }
+
+    setPassword(password) {
+        this.password = password;
+    }
+
+    setFirstname(firstname) {
+        this.firstname = firstname;
+    }
+
+    setLastname(lastname) {
+        this.lastname = lastname;
+    }
+
+    getFullName() {
+        return this.firstname + ' ' + this.lastname;
+    }
+
+    getInitials() {
+        return this.firstname.charAt(0) + this.lastname.charAt(0);
+    }
+
+    getAvatar() {
+        return 'https://ui-avatars.com/api/?name=' + this.getInitials();
     }
 }
 

@@ -9,7 +9,7 @@ function Body() {
     }
 
     function checkConnected() {
-        if (localStorage.getItem("isLogged") === "true") {
+        if (window.classUsers.isLogged()) {
             const button_login = document.getElementById("button_login");
             if (button_login != null) {
                 button_login.style.display = "none";
@@ -65,7 +65,7 @@ function Body() {
                                     <img src='/arrow.right.circle.svg' />
                                 </button>
                             </DelayLink>
-                            <DelayLink delay={1000} to="/" id='button_activities' style={{display: 'none'}}>
+                            <DelayLink delay={1000} to="/activity" id='button_activities' style={{display: 'none'}}>
                                 <button className='button' onClick={fadeScreen}>
                                     <a href='#'>Activités</a>
                                     <img src='/arrow.right.circle.svg' />

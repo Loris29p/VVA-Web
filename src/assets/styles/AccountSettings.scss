@@ -1,5 +1,292 @@
-.AccountSettings {
+// .AccountSettings {
 
+//     .container.fade {
+//         animation: zoomOutUp;
+//         animation-duration: 1s;
+//     }
+
+//     .container {
+//         display: flex;
+//         flex-direction: row;
+//         align-items: flex-start;
+//         padding: 0px;
+//         gap: 32px;
+
+//         position: absolute;
+//         width: 85%;
+//         height: 83%;
+//         left: 112px;
+//         top: 130px;
+
+//         animation: zoomIn;
+//         animation-duration: 1s; 
+
+//         .container_left {
+//             display: flex;
+//             width: 766px;
+//             height: 600px;
+//             left: 17px;
+//             top: -87px;
+//             background: #FFFFFF;
+//             border: 1.18798px solid rgba(0, 22, 10, 0.1);
+//             box-shadow: -50px 38px 38px rgba(0, 22, 10, 0.1);
+//             border-radius: 61.874px;
+//             justify-content: center;
+//             align-items: center;
+//             text-align: center;
+//             margin-top: 20px;
+
+//             .header {
+//                 height: 100px;
+//                 border-bottom: 1px solid rgba(0, 22, 10, 0.1);
+//                 display: flex;
+//                 text-align: center;
+//                 align-items: center;
+//                 justify-content: center;
+//                 padding: 0;
+//                 margin: 0;
+
+//                 h1 {
+//                     padding: 0;
+//                     margin: 0;
+//                     flex: none;
+//                     order: 0;
+//                     flex-grow: 0;
+//                     position: relative;
+//                     transition: .2s ease;
+
+//                     font-family: 'SF Pro Text Semibold';
+//                     font-style: normal;
+//                     font-weight: 700;
+//                     font-size: 40px;
+//                     line-height: 72px;
+//                     letter-spacing: 0.025em;
+//                     font-feature-settings: 'liga' off;
+//                     color: #111827;
+//                     text-decoration: none;
+//                     transition: .1s;
+//                 }
+//             }
+
+//             .form__group {
+//                 height: 380px;
+//                 width: 460px;
+//                 padding: 20px;
+//                 padding-top: 20px;
+
+//                 .form__group__input div:nth-child(2) {
+//                     animation: zoomInLeft;
+//                     animation-duration: 1s;
+//                 }
+
+//                 .form__group__input div:nth-child(3) {
+//                     animation: zoomInRight;
+//                     animation-duration: 1s;
+//                 }
+
+//                 .form__group__input {
+//                     display: flex;
+//                     flex-direction: column;
+//                     gap: 20px;
+
+//                     .form__group__input__names {
+//                         display: flex;
+//                         flex-direction:row;
+//                         gap: 15px;
+                        
+//                         .left {
+//                             align-self: left;
+//                             justify-self: left;
+//                             max-width: 220px;
+//                             animation: zoomInLeft;
+//                             animation-duration: 1s;
+//                         }
+
+//                         .right {
+//                             align-self: right;
+//                             justify-self: right;
+//                             max-width: 220px;
+//                             animation: zoomInRight;
+//                             animation-duration: 1s;
+//                         }
+
+//                         input {
+//                             width: 205px;
+//                         }
+//                     }
+
+//                     a {
+//                         position: absolute;
+//                         display: flex;
+//                         padding: 0;
+//                         margin: 0;
+//                         height: 30px;
+//                         width: 30px;
+//                         justify-content: center;
+//                         align-items: center;
+//                         margin-top: -45px;
+//                         margin-left: 420px;
+//                         transition: .2s ease;
+
+//                         &:hover {
+//                             cursor: pointer;
+//                             transform: scale(1.2);
+//                         }
+//                     }
+
+//                     label {
+//                         position: absolute;
+//                         height: 16px;
+//                         margin-left: 8px;
+//                         margin-top: -11px;
+
+//                         font-family: 'SF Pro Text';
+//                         font-style: normal;
+//                         font-weight: 500;
+//                         font-size: 12px;
+//                         line-height: 16px;
+//                         color: #263238;
+//                         border: 4px solid #FFFFFF;
+//                         background: #FFFFFF;
+//                     }
+
+//                     input {
+//                         padding: 7px 0;
+//                         outline: 0;
+//                         height: 46px;
+//                         width: 440px;
+//                         border: none;
+//                         border: 1px solid #26323837;
+//                         border-radius: 8px;
+//                         background: transparent;
+//                         transition: all 0.2s ease;
+//                         padding: 5px;
+//                         padding-left: 10px;
+//                         font-family: "SF Pro Text";
+//                         font-style: normal;
+//                         font-weight: 400;
+//                         font-size: 18px;
+//                         line-height: 28px;
+
+//                         &::placeholder {
+//                             color: #b1b1b1;
+//                             font-family: 'SF Pro Text';
+//                             font-style: normal;
+//                             font-weight: 400;
+//                             font-size: 15px;
+//                             line-height: 28px;
+//                             font-feature-settings: 'liga' off;
+//                         }
+
+//                         &:focus {
+//                             border: 2px solid var(--color-blizzard-primary);
+//                             border-radius: 8px;
+//                         }
+//                     }
+//                 }
+
+//                 .form__group__button {
+//                     margin-top: 10px;
+//                     width: 100%;
+//                     height: 50px;
+    
+//                     button {
+//                         display: flex;
+//                         border: none;
+//                         height: 50px;
+//                         width: 457px;
+    
+//                         background: #060016;
+//                         border-radius: 8px;
+//                         transition: .2s ease;
+    
+//                         align-items: center;
+//                         justify-content: center;
+//                         text-align: center;
+//                         overflow: hidden;
+//                         cursor: pointer;
+
+//                         animation: backInUp;
+//                         animation-duration: 1s;
+
+//                         .first_img {
+//                             width: 30px;
+//                             height: 26px;
+//                             margin-left: -350px;
+//                             margin-top: 0;
+//                             transition: .4s ease;
+//                             opacity: 1;
+//                             visibility: visible;
+//                         }
+    
+//                         .second_img {
+//                             width: 30px;
+//                             height: 30px;
+//                             margin-top: 0;
+//                             transition: .4s ease;
+//                             opacity: 0;
+//                             visibility: hidden;
+//                         }
+    
+//                         a {
+//                             position: absolute;
+//                             font-family: 'SF Pro Rounded';
+//                             text-decoration: none;
+//                             font-style: normal;
+//                             font-weight: 700;
+//                             font-size: 22.2246px;
+//                             line-height: 33px;
+//                             color: #FFFFFF;
+//                             transition: .2s ease;
+//                         }
+    
+//                         &:hover {
+//                             background: var(--color-blizzard-dark);
+//                         }
+        
+//                         // &:hover a {
+//                         //     transform: scale(1.2);
+//                         // }
+        
+//                         &:hover .second_img {
+//                             opacity: 1;
+//                             visibility: visible;
+//                             transform: translateX(350px);
+//                         }
+
+//                         &:hover .first_img {
+//                             transform: scale(1.2);
+//                             filter: brightness(0.3) invert(1);
+//                         }
+
+//                         &:active {
+//                             transform: scale(0.9);
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+
+//         .container_right {
+//             display: flex;
+//             width: 488px;
+//             height: 600px;
+//             left: 17px;
+//             top: -87px;
+//             background: #FFFFFF;
+//             border: 1.18798px solid rgba(0, 22, 10, 0.1);
+//             box-shadow: -50px 38px 38px rgba(0, 22, 10, 0.1);
+//             border-radius: 61.874px;
+//             justify-content: center;
+//             align-items: center;
+//             text-align: center;
+//             margin-top: 20px;
+//         }
+//     }
+// }
+
+.AccountSettings {
+    
     .container.fade {
         animation: zoomOutUp;
         animation-duration: 1s;
@@ -7,289 +294,207 @@
 
     .container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
         padding: 0px;
         gap: 32px;
 
         position: absolute;
-        width: 1286px;
-        height: 662px;
+        width: 85%;
+        height: 83vh;
         left: 112px;
         top: 130px;
 
         animation: zoomIn;
         animation-duration: 1s; 
 
-        .container_left {
+        background: #FFFFFF;
+        border: 1.18798px solid rgba(0, 22, 10, 0.1);
+        box-shadow: -50px 38px 38px rgba(0, 22, 10, 0.1);
+        border-radius: 15px;
+
+        .container_top {
+            border-bottom: 1.18798px solid rgba(0, 22, 10, 0.1);
+            height: 10%;
+            width: 100%;
             display: flex;
-            width: 766px;
-            height: 600px;
-            left: 17px;
-            top: -87px;
-            background: #FFFFFF;
-            border: 1.18798px solid rgba(0, 22, 10, 0.1);
-            box-shadow: -50px 38px 38px rgba(0, 22, 10, 0.1);
-            border-radius: 61.874px;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            margin-top: 20px;
 
-            .header {
-                height: 50px;
-                border-bottom: 1px solid rgba(0, 22, 10, 0.1);
+            h1 {
+                padding: 0;
+                margin: 0;
+                font-family: 'SF Pro Text';
+                font-style: normal;
+                font-size: 30px;
+                line-height: 72px;
+                letter-spacing: 0.015em;
+                font-feature-settings: 'liga' off;
+                color: rgba(0, 22, 10, 0.5);
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                margin-left: 2%;
+                animation: backInLeft;
+                animation-duration: 1s;
+            }
+
+            button {
                 display: flex;
-                justify-content: space-evenly;
+                border: none;
+                height: 40px;
+                width: 200px;
 
-                div {
-                    padding-top: 10px;
-                    flex: none;
-                    order: 0;
-                    align-self: stretch;
-                    flex-grow: 0;
-                    cursor: pointer;
-                    position: relative;
-                    transition: .2s ease;
-                    border-bottom: 2px solid #b1b1b164;
-                    height: 39px;
+                background: #060016;
+                border-radius: 8px;
+                transition: .2s ease;
+
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                overflow: hidden;
+                cursor: pointer;
+
+                margin-left: 67%;
+
+                animation: backInRight;
+                animation-duration: 1s;
+
+                .first_img {
+                    width: 25px;
+                    height: 25px;
+                    margin-left: -120px;
+                    margin-top: 0;
+                    transition: .4s ease;
+                    opacity: 1;
+                    visibility: visible;
+                    filter: brightness(0.3) invert(1);
+                }
+
+                .second_img {
+                    width: 25px;
+                    height: 25px;
+                    margin-top: 0;
+                    transition: .4s ease;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                a {
+                    position: absolute;
+                    font-family: 'SF Pro Rounded';
                     text-decoration: none;
+                    font-style: normal;
+                    font-size: 22.2246px;
+                    line-height: 33px;
+                    color: #FFFFFF;
+                    transition: .2s ease;
+                }
 
-                    a {
+                &:hover {
+                    background: #3D9090;
+                }
+
+                &:hover .second_img {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(120px);
+                }
+
+                &:hover .first_img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+        
+
+        .container_center {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            .container_center__left {
+                display: flex;
+                flex-direction: column;
+                animation: backInLeft;
+                animation-duration: 1s;
+                width: 50%;
+                border-right: 1px solid rgba($color: #000000, $alpha: 0.2);
+                padding: 4%;
+                padding-top: 2%;
+                padding-bottom: 2%;
+
+                h3 {
+                    padding: 0;
+                    margin: 0;
+                    font-family: "SF Pro Display";
+                    color: rgba(0, 22, 10, 0.666);
+                }
+
+                p {
+                    font-size: 15px;
+                    font-family: "SF Pro Display";
+                    color: rgba(0, 22, 10, 0.466);
+                }
+
+                h5 {
+                    font-size: 15px;
+                    font-family: "SF Pro Display";
+                    color: rgba(0, 22, 10, 0.466);
+                }
+
+                input {
+                    padding: 7px 0;
+                    outline: 0;
+                    height: 46px;
+                    width: 440px;
+                    border: none;
+                    border: 1px solid #26323837;
+                    border-radius: 8px;
+                    background: transparent;
+                    transition: all 0.2s ease;
+                    padding: 5px;
+                    padding-left: 10px;
+                    font-family: "SF Pro Text";
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 28px;
+
+                    &::placeholder {
+                        color: #b1b1b1;
                         font-family: 'SF Pro Text';
                         font-style: normal;
                         font-weight: 400;
-                        font-size: 48px;
+                        font-size: 15px;
                         line-height: 28px;
                         font-feature-settings: 'liga' off;
-                        color: #b1b1b18c;
-                        text-decoration: none;
-                        transition: .1s;
+                    }
+
+                    &:focus {
+                        border: 2px solid #3D9090;
+                        border-radius: 8px;
                     }
                 }
 
-                .active {
-                    border-bottom: 2px solid #3D9090;
-                }
 
-                .active a {
-                    color: #3D9090;
-                    font-weight: 600;
-                }
-            }
-
-            .form__group {
-                height: 380px;
-                width: 540px;
-                padding: 20px;
-                padding-top: 20px;
-
-                .form__group__input div:nth-child(2) {
-                    animation: zoomInLeft;
-                    animation-duration: 1s;
-                }
-
-                .form__group__input div:nth-child(3) {
-                    animation: zoomInRight;
-                    animation-duration: 1s;
-                }
-
-                .form__group__input {
+                .input_full_name {
                     display: flex;
                     flex-direction: column;
-                    gap: 20px;
-
-                    .form__group__input__names {
-                        display: flex;
-                        flex-direction:row;
-                        gap: 15px;
-                        
-                        .left {
-                            align-self: left;
-                            justify-self: left;
-                            max-width: 220px;
-                            animation: zoomInLeft;
-                            animation-duration: 1s;
-                        }
-
-                        .right {
-                            align-self: right;
-                            justify-self: right;
-                            max-width: 220px;
-                            animation: zoomInRight;
-                            animation-duration: 1s;
-                        }
-
-                        input {
-                            width: 205px;
-                        }
-                    }
-
-                    a {
-                        position: absolute;
-                        display: flex;
-                        padding: 0;
-                        margin: 0;
-                        height: 30px;
-                        width: 30px;
-                        justify-content: center;
-                        align-items: center;
-                        margin-top: -45px;
-                        margin-left: 420px;
-                        transition: .2s ease;
-
-                        &:hover {
-                            cursor: pointer;
-                            transform: scale(1.2);
-                        }
-                    }
-
-                    label {
-                        position: absolute;
-                        height: 16px;
-                        margin-left: 8px;
-                        margin-top: -11px;
-
-                        font-family: 'SF Pro Text';
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 12px;
-                        line-height: 16px;
-                        color: #263238;
-                        border: 4px solid #FFFFFF;
-                        background: #FFFFFF;
-                    }
-
-                    input {
-                        padding: 7px 0;
-                        outline: 0;
-                        height: 46px;
-                        width: 440px;
-                        border: none;
-                        border: 1px solid #26323837;
-                        border-radius: 8px;
-                        background: transparent;
-                        transition: all 0.2s ease;
-                        padding: 5px;
-                        padding-left: 10px;
-                        font-family: "SF Pro Text";
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 18px;
-                        line-height: 28px;
-
-                        &::placeholder {
-                            color: #b1b1b1;
-                            font-family: 'SF Pro Text';
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 15px;
-                            line-height: 28px;
-                            font-feature-settings: 'liga' off;
-                        }
-
-                        &:focus {
-                            border: 2px solid #3D9090;
-                            border-radius: 8px;
-                        }
-                    }
+                    gap: 2vh;
                 }
+            }
 
-                .form__group__button {
-                    margin-top: 10px;
-                    width: 100%;
-                    height: 50px;
-    
-                    button {
-                        display: flex;
-                        border: none;
-                        height: 50px;
-                        width: 457px;
-    
-                        background: #060016;
-                        border-radius: 8px;
-                        transition: .2s ease;
-    
-                        align-items: center;
-                        justify-content: center;
-                        text-align: center;
-                        overflow: hidden;
-                        cursor: pointer;
-
-                        animation: backInUp;
-                        animation-duration: 1s;
-
-                        .first_img {
-                            width: 27.8164px;
-                            height: 30.9121px;
-                            margin-left: -350px;
-                            margin-top: 0;
-                            transition: .4s ease;
-                            opacity: 1;
-                            visibility: visible;
-                        }
-    
-                        .second_img {
-                            width: 30px;
-                            height: 30px;
-                            margin-top: 0;
-                            transition: .4s ease;
-                            opacity: 0;
-                            visibility: hidden;
-                        }
-    
-                        a {
-                            position: absolute;
-                            font-family: 'SF Pro Rounded';
-                            text-decoration: none;
-                            font-style: normal;
-                            font-weight: 700;
-                            font-size: 22.2246px;
-                            line-height: 33px;
-                            color: #FFFFFF;
-                            transition: .2s ease;
-                        }
-    
-                        &:hover {
-                            background: #3D9090;
-                        }
-        
-                        &:hover a {
-                            transform: scale(1.2);
-                        }
-        
-                        &:hover .second_img {
-                            opacity: 1;
-                            visibility: visible;
-                            transform: translateX(350px);
-                        }
-
-                        &:hover .first_img {
-                            transform: scale(1.2);
-                        }
-
-                        &:active {
-                            transform: scale(0.9);
-                        }
-                    }
-                }
+            .container_center__right {
+                animation: backInRight;
+                animation-duration: 1s;
+                width: 50%;
+                padding: 4%;
+                padding-top: 2%;
+                padding-bottom: 2%;
             }
         }
 
-        .container_right {
-            display: flex;
-            width: 488px;
-            height: 600px;
-            left: 17px;
-            top: -87px;
-            background: #FFFFFF;
-            border: 1.18798px solid rgba(0, 22, 10, 0.1);
-            box-shadow: -50px 38px 38px rgba(0, 22, 10, 0.1);
-            border-radius: 61.874px;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-top: 20px;
-        }
     }
+
 }
