@@ -32,7 +32,7 @@ function AccountSettings() {
         }
         
         if (firstname !== "") {
-            const changeFirstname = window.classUser.changeFirstname(firstname);
+            const changeFirstname = window.classUsers.changeFirstname(firstname);
             setTimeout(() => {
                 if (changeFirstname.changed === true) {
                     // fadeScreen();
